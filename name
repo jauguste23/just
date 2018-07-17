@@ -1,0 +1,124 @@
+//Justin Auguste 
+//001322810
+//ICSI 201 
+//Assignment 2
+import java.util.Scanner; 
+public class NameOrder{ 
+ public static void main(String[] args){ 
+        Scanner any= new Scanner(System.in);  
+        //Asking user for first name 
+        System.out.println("Enter your first name:"); 
+        String firstName = any.nextLine();     
+        //Middle name 
+        System.out.println("Enter your middle name:"); 
+        String middleName = any.nextLine();            
+        //Last name  
+        System.out.println("Enter your last name:"); 
+        String lastName = any.nextLine();           
+        //Ask for sorting choice, either for ascending alphabetical order or descending alphabetical order and named it user 
+        System.out.println("Enter 1 for ascending alphabetical order or 2 for descending alphabetical order"); 
+        int user = any.nextInt();
+        if(user == 1){ 
+         //Compare to find the largest of the names, starting with first name compared to middle name  
+         if (firstName.compareTo(middleName) < 0){ 
+          if(firstName.compareTo(lastName) < 0){ 
+           //If first name is greater than 0 when compared to middle name and last name, then first name goes first 
+           String nameOne = firstName; 
+           // Then compare middle name to last name to see if it is bigger than 0 when compared 
+           if(middleName.compareTo(lastName) < 0){ 
+            //This results in the middle name going second and the last name going last  
+            String nameTwo = middleName; 
+            String nameThree = lastName; 
+            //At the end of every outcome, print out in ascending alphabetical order  
+            System.out.println(nameOne +" "+ nameTwo +" "+ nameThree); 
+           } 
+           else{ 
+            //If it is not less than 0, then last name goes in the middle and the middle name goes last  
+            String nameTwo = lastName; 
+            String nameThree = middleName; 
+            System.out.println(nameOne +" "+ nameTwo +" "+ nameThree); 
+           } 
+          } 
+          else{  
+           //If first name was not less than 0 when compared to the last name 
+           String nameOne = lastName; 
+           String nameTwo = firstName; 
+           String nameThree = middleName;         
+           System.out.println(nameOne +" "+ nameTwo +" "+ nameThree); 
+          } 
+         } 
+         else{ 
+          if(middleName.compareTo(lastName) < 0){ 
+           //If middle name was less than 0 when compared to last name 
+           String nameOne = middleName; 
+           if(firstName.compareTo(lastName) < 0){ 
+            //If first name was less than 0 when compared to last name 
+            String nameTwo = firstName; 
+            String nameThree = lastName; 
+            System.out.println(nameOne +" "+ nameTwo +" "+ nameThree); 
+           } 
+           else{ 
+            //If first first name was more than 0 when compared to last name 
+            String nameTwo = lastName; 
+            String nameThree = firstName; 
+            System.out.println(nameOne +" "+ nameTwo +" "+ nameThree); 
+           } 
+          } 
+          else{ 
+           //If middle name compared to last name was never less than 0 
+           String nameOne = lastName; 
+           String nameTwo = middleName; 
+           String nameThree = firstName; 
+           System.out.println(nameOne +" "+ nameTwo +" "+ nameThree); 
+          } 
+         }             
+        } 
+        //this else is the second half of the code for users who enter 2 for descending alphabetical order 
+        //it is identical to the top half of the if statement except the print statements are in reverse order 
+        else{ 
+         if(firstName.compareTo(middleName) < 0){ 
+          if(firstName.compareTo(lastName) < 0){ 
+           String nameOne = firstName; 
+           if(middleName.compareTo(lastName) < 0){ 
+            String nameTwo = middleName;  
+            String nameThree = lastName; 
+            //At the end of every outcome, print out in descending alphabetical order  
+            System.out.println(nameThree +" "+ nameTwo +" "+ nameOne); 
+           } 
+           else{ 
+            String nameTwo = lastName; 
+            String nameThree = middleName; 
+            System.out.println(nameThree +" "+ nameTwo +" "+ nameOne); 
+           } 
+          } 
+          else{  
+           String nameOne = lastName; 
+           String nameTwo = firstName; 
+           String nameThree = middleName;       
+           System.out.println(nameThree +" "+ nameTwo +" "+ nameOne); 
+          } 
+         } 
+         else{ 
+          if(middleName.compareTo(lastName) < 0){ 
+           String nameOne = middleName; 
+           if(firstName.compareTo(lastName) < 0){ 
+            String nameTwo = firstName; 
+            String nameThree = lastName; 
+            System.out.println(nameThree +" "+ nameTwo +" "+ nameOne); 
+           } 
+           else{ 
+            String nameTwo = lastName; 
+            String nameThree = firstName; 
+            System.out.println(nameThree +" "+ nameTwo +" "+ nameOne); 
+           } 
+          } 
+          else{ 
+           String nameOne = lastName; 
+           String nameTwo = middleName; 
+           String nameThree = firstName; 
+           System.out.println(nameThree +" "+ nameTwo +" "+ nameOne); 
+          } 
+         }             
+        } 
+ } 
+} 
